@@ -174,7 +174,6 @@ jobs:
             target/linux/generic/pending-6.12 \
             package/network/config/firewall4/patches \
             package/network/utils/nftables/patches \
-            package/network/utils/iptables/patches \
             package/libs/libnftnl/patches \
             | grep '^??' | cut -c4- | while read -r f; do sudo rm -f "$f" && echo "removed turboacc patch: $f"; done || true
 
@@ -242,7 +241,7 @@ jobs:
       - name: Release Firmware
         uses: softprops/action-gh-release@master
         with:
-          tag_name: ImmortalWrt-Redmi_AX6-${{env.WRT_DATE}}
+          tag_name: LibWrt-Redmi_AX6-${{env.WRT_DATE}}
           files: ./wrt/upload/*.*
           body: |
             源码：${{env.WRT_REPO}}
