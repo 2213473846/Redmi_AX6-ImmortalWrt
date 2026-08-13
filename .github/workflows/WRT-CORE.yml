@@ -171,10 +171,6 @@ jobs:
          
           git status --porcelain --untracked-files=all -- \
             target/linux/generic/hack-6.12 \
-            target/linux/generic/pending-6.12 \
-            package/network/config/firewall4/patches \
-            package/network/utils/nftables/patches \
-            package/libs/libnftnl/patches \
             | grep '^??' | cut -c4- | while read -r f; do sudo rm -f "$f" && echo "removed turboacc patch: $f"; done || true
 
           if [[ "${WRT_CONFIG,,}" == *"test"* ]]; then
