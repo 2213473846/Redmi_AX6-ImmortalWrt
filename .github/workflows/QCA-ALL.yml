@@ -36,8 +36,8 @@ jobs:
       #max-parallel: 3
       matrix:
         CONFIG: [IPQ807X-WIFI-YES]
-        SOURCE: [LiBwrt/LibWrt]
-        BRANCH: [25.12-nss]
+        SOURCE: [qosmio/openwrt-ipq]
+        BRANCH: [24.10-nss]
 
     #调用公用编译核心WRT-CORE.yml
     uses: ./.github/workflows/WRT-CORE.yml
